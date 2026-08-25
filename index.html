@@ -11,22 +11,9 @@
 
   <!-- ============ ヘッダー ============ -->
   <header class="hero">
-    <!-- ▼動画を増やしたい場合は下のplaylist配列にファイル名を追加してください -->
-    <video id="hero-video" class="hero-video" autoplay muted playsinline poster="hero-poster.jpg">
+    <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
-    <script>
-      (function () {
-        var playlist = ["hero-bg.mp4", "hero-bg-2.mp4"];
-        var index = 0;
-        var video = document.getElementById("hero-video");
-        video.addEventListener("ended", function () {
-          index = (index + 1) % playlist.length;
-          video.src = playlist[index];
-          video.play();
-        });
-      })();
-    </script>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <!-- ▼店名・キャッチコピーはここを書き換えてください -->
