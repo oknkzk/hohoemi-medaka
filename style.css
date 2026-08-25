@@ -109,8 +109,7 @@ a {
 
 /* ---------- セクション共通 ---------- */
 .section {
-  padding: 56px 24px;
-  text-align: center;
+  padding: 56px 40px;
 }
 
 .section > * {
@@ -140,11 +139,9 @@ a {
 
 .notice-list li {
   display: flex;
-  justify-content: center;
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid #dfe8e9;
-  text-align: left;
 }
 
 .notice-date {
