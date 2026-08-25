@@ -108,6 +108,11 @@ a {
   color: #1f2d2f;
 }
 
+.lightwidget-widget {
+  margin-bottom: 24px;
+  border-radius: var(--radius);
+}
+
 /* ---------- セクション共通 ---------- */
 .section {
   padding: 56px 24px;
