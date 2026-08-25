@@ -36,15 +36,6 @@
       })();
     </script>
     <div class="hero-overlay"></div>
-    <!-- ▼泳ぐメダカの装飾。数を増やす場合はSVGごとコピーしてクラス名(medaka-3など)とtopの位置を変えてください -->
-    <svg class="swimming-medaka medaka-1" viewBox="0 0 64 32" aria-hidden="true">
-      <path fill="currentColor" d="M4 16 C4 8 20 4 34 8 C44 10 50 6 60 4 L54 16 L60 28 C50 26 44 22 34 24 C20 28 4 24 4 16 Z" />
-      <circle cx="14" cy="14" r="1.6" fill="#1f2d2f" />
-    </svg>
-    <svg class="swimming-medaka medaka-2" viewBox="0 0 64 32" aria-hidden="true">
-      <path fill="currentColor" d="M4 16 C4 8 20 4 34 8 C44 10 50 6 60 4 L54 16 L60 28 C50 26 44 22 34 24 C20 28 4 24 4 16 Z" />
-      <circle cx="14" cy="14" r="1.6" fill="#1f2d2f" />
-    </svg>
     <div class="hero-inner">
       <!-- ▼店名・キャッチコピーはここを書き換えてください -->
       <img src="logo/hohoemi_medaka_moji.png" alt="ほほえみめだか" class="hero-logo">
@@ -186,35 +177,6 @@
       sections.forEach(function (el) {
         observer.observe(el);
       });
-    })();
-  </script>
-
-  <!-- ▼ヒーロー動画のパララックス（スクロール量に応じて背景を少しずらす） -->
-  <script>
-    (function () {
-      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      var hero = document.getElementById("hero");
-      var layers = hero.querySelectorAll(".hero-video");
-      var ticking = false;
-      function update() {
-        var rect = hero.getBoundingClientRect();
-        var offset = rect.top * 0.25;
-        for (var i = 0; i < layers.length; i++) {
-          layers[i].style.transform = "translate3d(0, " + offset + "px, 0) scale(1.15)";
-        }
-        ticking = false;
-      }
-      window.addEventListener(
-        "scroll",
-        function () {
-          if (!ticking) {
-            requestAnimationFrame(update);
-            ticking = true;
-          }
-        },
-        { passive: true }
-      );
-      update();
     })();
   </script>
 </body>
