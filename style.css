@@ -58,7 +58,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(240, 192, 36, 0.68), rgba(180, 130, 20, 0.72));
+  background: linear-gradient(135deg, rgba(240, 192, 36, 0.4), rgba(180, 130, 20, 0.45));
   z-index: 1;
 }
 
@@ -67,6 +67,7 @@ a {
   z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 .eyebrow {
