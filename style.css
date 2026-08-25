@@ -114,8 +114,9 @@ a {
 
 .section > * {
   max-width: var(--max-width);
-  margin-left: 0;
+  margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 .section h2 {
@@ -123,7 +124,8 @@ a {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 3px solid var(--color-accent);
-  display: inline-block;
+  display: block;
+  width: fit-content;
 }
 
 .section-alt {
@@ -133,7 +135,6 @@ a {
 /* ---------- お知らせ ---------- */
 .notice-list {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 
