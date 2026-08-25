@@ -6,11 +6,17 @@
 <title>ほほえみめだか | 茨城県つくば市</title>
 <meta name="description" content="就労支援の一環としてメダカの販売を行う「ほほえみめだか」の紹介ページです。お店の説明、所在地、営業時間、Instagramのご案内、お知らせを掲載しています。">
 <link rel="stylesheet" href="style.css">
+<script>
+  /* ▼オープニング演出のON/OFF判定。「動きを減らす」設定の方には表示しません */
+  if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("intro-active");
+  }
+</script>
 </head>
 <body>
 
   <!-- ============ ヘッダー ============ -->
-  <header class="hero">
+  <header class="hero" id="hero">
     <!-- ▼動画再生後に切り替わる画像。差し替えたい場合はhero-end.jpgを別の画像に入れ替えてください -->
     <video id="hero-video" class="hero-video" autoplay muted playsinline poster="hero-poster.jpg">
       <source src="hero-bg.mp4" type="video/mp4">
@@ -129,5 +135,20 @@
     <p>&copy; 2026 ほほえみめだか</p>
   </footer>
 
+  <!-- ▼オープニング演出：全画面表示からヘッダーサイズへ収縮させる時間はここで調整できます -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      if (!root.classList.contains("intro-active")) return;
+      function settle() {
+        root.classList.remove("intro-active");
+        root.classList.add("intro-done");
+      }
+      window.addEventListener("load", function () {
+        setTimeout(settle, 1900);
+      });
+      setTimeout(settle, 4500); // 読み込みが遅い場合の保険
+    })();
+  </script>
 </body>
 </html>
