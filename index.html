@@ -11,9 +11,21 @@
 
   <!-- ============ ヘッダー ============ -->
   <header class="hero">
-    <video class="hero-video" autoplay muted playsinline poster="hero-poster.jpg">
+    <!-- ▼動画再生後に切り替わる画像。差し替えたい場合はhero-end.jpgを別の画像に入れ替えてください -->
+    <video id="hero-video" class="hero-video" autoplay muted playsinline poster="hero-poster.jpg">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
+    <img id="hero-end-image" class="hero-video hero-end-image" src="hero-end.jpg" alt="" hidden>
+    <script>
+      (function () {
+        var video = document.getElementById("hero-video");
+        var image = document.getElementById("hero-end-image");
+        video.addEventListener("ended", function () {
+          video.hidden = true;
+          image.hidden = false;
+        });
+      })();
+    </script>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <!-- ▼店名・キャッチコピーはここを書き換えてください -->
