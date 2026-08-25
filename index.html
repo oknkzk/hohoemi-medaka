@@ -21,14 +21,17 @@
     <video id="hero-video" class="hero-video" autoplay muted playsinline poster="hero-poster.jpg">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
-    <img id="hero-end-image" class="hero-video hero-end-image" src="hero-end.jpg" alt="" hidden>
+    <img id="hero-end-image" class="hero-video hero-end-image" src="hero-end.jpg" alt="">
     <script>
       (function () {
         var video = document.getElementById("hero-video");
         var image = document.getElementById("hero-end-image");
         video.addEventListener("ended", function () {
-          video.hidden = true;
-          image.hidden = false;
+          image.classList.add("is-visible");
+          video.classList.add("is-fading-out");
+          setTimeout(function () {
+            video.hidden = true;
+          }, 1000);
         });
       })();
     </script>

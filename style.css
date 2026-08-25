@@ -69,6 +69,20 @@ html.intro-active body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: opacity 1s ease;
+}
+
+/* ▼動画再生後の画像へのクロスフェード */
+.hero-end-image {
+  opacity: 0;
+}
+
+.hero-end-image.is-visible {
+  opacity: 1;
+}
+
+#hero-video.is-fading-out {
+  opacity: 0;
 }
 
 .hero-overlay {
