@@ -22,17 +22,27 @@
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
     <img id="hero-end-image" class="hero-video hero-end-image" src="hero-end.jpg" alt="">
+    <!-- ▼動画から画像への切り替えタイミング。「ヘッダーになってから何秒後か」は下のswapDelayで調整できます -->
     <script>
       (function () {
         var video = document.getElementById("hero-video");
         var image = document.getElementById("hero-end-image");
-        video.addEventListener("ended", function () {
+        var swapped = false;
+        function swapToImage() {
+          if (swapped) return;
+          swapped = true;
           image.classList.add("is-visible");
           video.classList.add("is-fading-out");
           setTimeout(function () {
             video.hidden = true;
           }, 1000);
-        });
+        }
+        video.addEventListener("ended", swapToImage);
+        var introActive = document.documentElement.classList.contains("intro-active");
+        var introSettleDelay = 1900; // オープニング演出：全画面表示の長さ
+        var shrinkDuration = 1100; // オープニング演出：ヘッダーサイズへ収縮する時間
+        var swapDelay = (introActive ? introSettleDelay + shrinkDuration : 0) + 1000;
+        setTimeout(swapToImage, swapDelay);
       })();
     </script>
     <div class="hero-overlay"></div>
