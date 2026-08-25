@@ -114,7 +114,7 @@ a {
 
 .section > * {
   max-width: var(--max-width);
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
