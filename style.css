@@ -121,6 +121,11 @@ html.intro-active .hero-inner {
   height: auto;
   margin: 0 auto 12px;
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05);
 }
 
 .hero .tagline {
@@ -133,9 +138,25 @@ html.intro-active .hero-inner {
   margin-bottom: 24px;
 }
 
+.sk-instagram-feed img {
+  transition: transform 0.3s ease;
+}
+
+.sk-instagram-feed img:hover {
+  transform: scale(1.05);
+}
+
 /* ---------- セクション共通 ---------- */
 .section {
   padding: 56px 40px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section > * {
@@ -146,10 +167,41 @@ html.intro-active .hero-inner {
 }
 
 .section h2 {
+  position: relative;
   font-size: 1.5rem;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 3px solid var(--color-accent);
+}
+
+/* ▼見出しの下線：セクションが表示されたら左から右に伸びる */
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease 0.25s;
+}
+
+.section.is-visible h2::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .section h2::after {
+    transform: scaleX(1);
+    transition: none;
+  }
 }
 
 .section-alt {
@@ -167,6 +219,12 @@ html.intro-active .hero-inner {
   gap: 16px;
   padding: 14px 0;
   border-bottom: 1px solid #dfe8e9;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.notice-list li:hover {
+  background-color: var(--color-bg-alt);
+  transform: translateX(4px);
 }
 
 .notice-date {
@@ -212,6 +270,12 @@ html.intro-active .hero-inner {
   display: block;
   min-height: 320px;
   background: #dfe8e9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.access-map iframe:hover {
+  transform: scale(1.015);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
 }
 
 .map-hint {
