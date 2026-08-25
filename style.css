@@ -129,25 +129,6 @@ html.intro-active .hero-inner {
   margin: 0 0 28px;
 }
 
-/* ---------- 共通ボタン ---------- */
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  color: #fff;
-}
-
 .sk-instagram-feed {
   margin-bottom: 24px;
 }
