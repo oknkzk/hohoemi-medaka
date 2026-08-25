@@ -1,0 +1,190 @@
+/* =========================================================
+   デザイン設定：まずはこの :root の中の値を変えるだけで
+   サイト全体の色や雰囲気を簡単に変更できます。
+   ========================================================= */
+:root {
+  --color-primary: #1d7a8c;      /* メインカラー（見出し・ボタンなど） */
+  --color-primary-dark: #145b69; /* ホバー時などの濃い色 */
+  --color-accent: #f4a259;       /* アクセントカラー */
+  --color-bg: #ffffff;           /* 背景色 */
+  --color-bg-alt: #f2f8f9;       /* セクションの背景色（縞模様用） */
+  --color-text: #1f2d2f;         /* 本文の文字色 */
+  --color-text-muted: #5c6f72;   /* 補助的な文字色 */
+  --font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --radius: 14px;
+  --max-width: 860px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+}
+
+h1, h2 {
+  color: var(--color-primary);
+  line-height: 1.4;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* ---------- ヘッダー ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  text-align: center;
+  padding: 72px 24px 56px;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 12px;
+}
+
+.hero .tagline {
+  font-size: 1.05rem;
+  opacity: 0.92;
+  margin: 0 0 28px;
+}
+
+/* ---------- 共通ボタン ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #1f2d2f;
+}
+
+/* ---------- セクション共通 ---------- */
+.section {
+  padding: 56px 24px;
+}
+
+.section > * {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--color-accent);
+  display: inline-block;
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+/* ---------- お知らせ ---------- */
+.notice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notice-list li {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #dfe8e9;
+}
+
+.notice-date {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 所在地 ---------- */
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 700px) {
+  .access-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.access-info dl {
+  margin: 0;
+}
+
+.access-info dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 16px;
+}
+
+.access-info dt:first-child {
+  margin-top: 0;
+}
+
+.access-info dd {
+  margin: 4px 0 0;
+  color: var(--color-text);
+}
+
+.access-map iframe {
+  border-radius: var(--radius);
+  display: block;
+  min-height: 320px;
+  background: #dfe8e9;
+}
+
+.map-hint {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- フッター ---------- */
+.footer {
+  text-align: center;
+  padding: 28px 24px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
