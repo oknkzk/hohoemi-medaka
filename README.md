@@ -33,14 +33,14 @@ GitHubアカウントをお持ちとのことなので、下記の手順で公�
    git add .
    git commit -m "first commit"
    git branch -M main
-   git remote add origin https://github.com/Okazuuu/hohoemi-medaka.git
+   git remote add origin https://github.com/oknkzk/hohoemi-medaka.git
    git push -u origin main
    ```
 
 3. GitHub上でリポジトリの `Settings` → `Pages` を開く
 4. `Build and deployment` の `Source` を `Deploy from a branch` にし、
    Branch を `main` / `/(root)` にして `Save`
-5. 数十秒〜数分待つと、`https://Okazuuu.github.io/hohoemi-medaka/`
+5. 数十秒〜数分待つと、`https://oknkzk.github.io/hohoemi-medaka/`
    でページが公開されます（Settings → Pages の画面にURLが表示されます）
 
 ## 更新のしかた
