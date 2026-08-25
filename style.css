@@ -124,8 +124,6 @@ a {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 3px solid var(--color-accent);
-  display: block;
-  width: fit-content;
 }
 
 .section-alt {
