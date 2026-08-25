@@ -58,7 +58,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(29, 122, 140, 0.72), rgba(20, 91, 105, 0.72));
+  background: linear-gradient(135deg, rgba(196, 138, 18, 0.72), rgba(145, 97, 10, 0.72));
   z-index: 1;
 }
 
